@@ -32,3 +32,4 @@ This project focuses on Exploratory Data Analysis (EDA) using the Titanic datase
 
 ## Learning Outcomes
 This project strengthened my understanding of Exploratory Data Analysis (EDA), data inspection, handling missing values, identifying feature types, and visualizing datasets before machine learning.
+Colab Link:https://colab.research.google.com/drive/1sQ_Hta_KEx2aC2-Y1qba3h9551ePDPKv?hl=en#scrollTo=e3_4uBGiwqLq
