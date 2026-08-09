@@ -206,6 +206,43 @@ Anilmali/
 
 ---
 
+# Week 4: Machine Learning Fundamentals – Building Proper ML Pipelines
+
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-v1.0%2B-orange)
+![Status](https://img.shields.io/badge/Status-Completed-success)
+
+## 📌 Project Overview
+
+Production-ready machine learning code isn't a collection of ad-hoc Jupyter notebook cells — it requires clean, modular, and leak-free architecture. This project demonstrates how to build an end-to-end **Scikit-Learn Pipeline** on the Titanic survivorship dataset.
+
+By wrapping custom feature engineering, multi-type preprocessing (`ColumnTransformer`), and model training into a unified pipeline object, this project enforces strict training/testing boundaries to prevent **data leakage** and ensure seamless reproducibility in production environments.
+
+---
+
+## 🎯 Task Objectives & Accomplishments
+
+- [x] **Dataset Selection:** Utilized the Titanic dataset containing a mix of continuous, discrete, missing, and categorical features.
+- [x] **Data Leakage Prevention:** Applied train-test splitting prior to any imputation, encoding, or scaling.
+- [x] **Custom Feature Engineering:** Built a Scikit-Learn compatible transformer using `BaseEstimator` and `TransformerMixin` to generate domain-specific features:
+  - `family_size`: Combining `SibSp` + `Parch` + 1.
+  - `is_alone`: Binary indicator flag for solo travelers.
+- [x] **ColumnTransformer Implementation:**
+  - **Numerical Sub-Pipeline:** `SimpleImputer(strategy='median')` ➔ `StandardScaler()`
+  - **Categorical Sub-Pipeline:** `SimpleImputer(strategy='most_frequent')` ➔ `OneHotEncoder(handle_unknown='ignore')`
+- [x] **Unified Pipeline Assembly:** Chained feature engineering, `ColumnTransformer`, and `RandomForestClassifier` into a single estimator object.
+- [x] **Baseline Comparison:** Confirmed pipeline accuracy and F1-score match or exceed manual preprocessing approaches while writing significantly cleaner code.
+- [x] **Model Serialization:** Serialized the complete pipeline using `joblib` for direct raw-data inference.
+
+---
+
+## 🛠️ Repository Structure
+
+```text
+├── Week4_ML_Pipeline_Titanic.ipynb   # 32-cell complete Jupyter Notebook
+├── titanic_ml_pipeline.joblib         # Serialized end-to-end model pipeline
+├── README.md                          # Project documentation
+└── requirements.txt                   # Dependency requirements
 # 👨‍💻 Author
 
 **Anil Mali**
